@@ -1,9 +1,16 @@
 import React from "react"
 import Image from "gatsby-image"
-import { Link } from "gatsby"
+
 import { graphql, useStaticQuery } from "gatsby"
 import SocialLinks from "../constants/socialLinks"
+import {Link} from 'react-scroll'
 // ...GatsbyImageSharpFluid
+
+function scroll(val)
+{
+    //alert(document.getElementById(val));
+    document.getElementById(val).click()
+}
 const query = graphql`
     {
       file(relativePath: {eq: "dora-img_50.png"}) {
@@ -38,6 +45,29 @@ const Hero = () => {
             <br/>
             <h4>dora.kardum1@gmail.com</h4>
             <SocialLinks />
+            <Link to="work experience" activeClass="active" spy={true} smooth={true} className='btn'>
+              Work Experience
+            </Link>
+            <Link to="education" spy={true} smooth={true} className='btn'>
+              Education
+            </Link>
+            <Link to="accomplishment" spy={true} smooth={true} className='btn'>
+              Accomplishments
+            </Link>
+            <Link to="\skills" spy={true} smooth={true} className='btn'>
+              Skills
+            </Link>
+            
+            <button to="hobbies"  activeClass="active" spy={true} smooth={true} className='btn'>
+              Hobbies
+            </button>
+            
+             <Link to='/Books' className='btn'>
+              Books
+            </Link>
+            <Link to='/Baking' className='btn'>
+              Baking
+            </Link>
           </div>
         </div>
       </article>

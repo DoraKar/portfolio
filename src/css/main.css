@@ -67,11 +67,16 @@ Global Styles
 }
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-white);
+
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
   margin-top: 5rem;
+  background: url("../assets/flowers.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 ul {
@@ -132,6 +137,16 @@ p {
 }
 /*  global classes */
 
+.noselect {
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .btn {
   text-transform: uppercase;
   background: var(--clr-primary-5);
@@ -161,14 +176,24 @@ p {
 }
 /* section */
 .section {
-  padding: 5rem 0;
+  padding: 1rem 0;
+  margin-left: ;
+  justify-content: center;
+  position: relative;
+}
+
+.line {
+  display: block;
+  line-height: 10px;
+  margin-left: 0cm;
+  overflow: auto;
 }
 
 .section-center {
-  width: 90vw;
+  width: 30vw;
   margin: 0 auto;
-  max-width: 1170px;
 }
+
 @media screen and (min-width: 992px) {
   .section-center {
     width: 95vw;
@@ -424,6 +449,19 @@ Hero
   position: sticky;
 }
 
+.hero-job {
+  margin-top: -5rem;
+  padding-top: 5rem;
+  height: 300vh;
+  background: url("../assets/flowers.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* background-size: 1270px 1100px; */
+  position: sticky;
+}
+
 .hero-center {
   height: 60%;
   display: grid;
@@ -491,12 +529,7 @@ Hero
   .hero::before {
     content: "";
     position: absolute;
-    top: 10%;
-    left: 30%;
-    right: 0;
-    bottom: 0;
-    right: 10%;
-    background: var(--clr-white);
+    background: none;
   }
   .hero-center {
     grid-template-columns: repeat(12, 1fr);
@@ -529,6 +562,11 @@ Hero
     grid-row: 1/12;
     grid-column: 9/12;
     color: black;
+    background: var(--clr-white);
+    padding: 1rem 2rem;
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    padding-bottom: 3000px;
   }
   .hero-hello h1 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -635,9 +673,12 @@ Jobs
   width: 30vw;
   margin: 0 auto;
   max-width: var(--max-width);
+  justify-content: none;
+  background: none;
 }
+
 .btn-container {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 4rem;
@@ -662,11 +703,30 @@ Jobs
   color: var(--clr-primary-5);
   box-shadow: 0 2px var(--clr-primary-5);
 }
+.job-card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 .job-info {
   /* min-height: 420px; */
+
+  margin: auto;
+  border-spacing: 0 1px;
+  background: var(--clr-white);
+  padding: 1rem 2rem;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  border-top-left-radius: var(--radius);
+  white-space: nowrap;
+  margin-left: -60px;
 }
+
 .job-info h3 {
   font-weight: 400;
+  justify-content: center;
+  font-size: 23px;
 }
 .job-info h4 {
   text-transform: uppercase;
@@ -675,9 +735,12 @@ Jobs
   display: inline-block;
   padding: 0.375rem 0.75rem;
   border-radius: var(--radius);
+  justify-content: center;
 }
 .job-date {
   letter-spacing: var(--spacing);
+  white-space: pre-wrap;
+  line-height: 0.5cm;
 }
 .job-desc {
   display: grid;
@@ -685,6 +748,8 @@ Jobs
   column-gap: 2rem;
   align-items: center;
   margin-bottom: 1.25rem;
+  white-space: pre-wrap;
+  user-select: none;
 }
 .job-desc p {
   margin-bottom: 0;
@@ -695,9 +760,10 @@ Jobs
 }
 @media screen and (min-width: 992px) {
   .jobs-center {
-    width: 90vw;
+    width: 30vw;
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-column-start: 3;
+
     column-gap: 4rem;
   }
   .btn-container {
@@ -721,7 +787,7 @@ Projects
 ===============
 */
 .projects {
-  background: var(--clr-grey-10);
+  background: none;
 }
 .project {
   display: grid;
@@ -866,7 +932,7 @@ Blog
 .blog-img {
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
-  height: 15rem;
+  height: 10rem;
 }
 .blog-card {
   padding: 1.5rem 1rem;
