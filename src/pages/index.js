@@ -11,6 +11,7 @@ import Educations from "../components/Educations"
 import Accomplishments from "../components/Accomplishments"
 import Hobbies from "../components/Hobbies"
 import styled from "styled-components"
+import Sidebar from "../components/Sidebar"
 
 export default ({ data }) => {
   const {
@@ -26,6 +27,7 @@ export default ({ data }) => {
     <Layout className='noselect'>
           <StyledBackgroundSection />
           <Hero />
+          <Sidebar/>
           <Jobs jobs={jobs}/>
           <Educations educations={educations}/>
           <Accomplishments accomplishments={accomplishments}/>

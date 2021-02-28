@@ -4,7 +4,7 @@ const data = [
   {
     id: 1,
     text: "home",
-    url: "/",
+    to:"education"
   },
   {
     id: 2,

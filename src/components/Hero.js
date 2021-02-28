@@ -45,15 +45,14 @@ const Hero = () => {
             <br/>
             <h4>dora.kardum1@gmail.com</h4>
             <SocialLinks />
+            
             <Link to="work experience" activeClass="active" spy={true} smooth={true} className='btn'>
               Work Experience
             </Link>
             <Link to="education" spy={true} smooth={true} className='btn'>
               Education
             </Link>
-            <Link to="accomplishment" spy={true} smooth={true} className='btn'>
-              Accomplishments
-            </Link>
+            
             <Link to="\skills" spy={true} smooth={true} className='btn'>
               Skills
             </Link>
